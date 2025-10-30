@@ -6,7 +6,7 @@ export default function Form() {
   return (
     <form
       action={createExpense}
-      className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 w-full max-w-md space-y-4"
+      className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 w-full max-w-md space-y-4 mb-5"
     >
       <h2 className="text-xl font-semibold text-gray-800 mb-2">Add Record</h2>
 

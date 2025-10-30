@@ -4,8 +4,10 @@ import { DeleteExpense, UpdateExpense } from "@/lib/buttons";
 export default async function Table() {
   const data = await listExpenses();
   return (
-    <div className="overflow-x-auto rounded-2xl shadow-md border border-gray-200">
-      <table className="min-w-full bg-white">
+    //<div className="overflow-x-auto rounded-2xl shadow-md border border-gray-200"></div>
+    //"bg-white p-6 rounded-2xl shadow-md border border-gray-200 w-full max-w-md space-y-4
+    <div className=" w-full max-w-md">
+      <table className="shadow-md border border-gray-200  ">
         <thead>
           <tr className="bg-gray-100 text-gray-700 text-left">
             <th className="px-4 py-3 font-semibold">Description</th>
