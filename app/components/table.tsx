@@ -1,5 +1,5 @@
 import { listExpenses } from "@/lib/data";
-import { DeleteExpense } from "@/lib/buttons";
+import { DeleteExpense, UpdateExpense } from "@/lib/buttons";
 
 export default async function Table() {
   const data = await listExpenses();
@@ -12,7 +12,9 @@ export default async function Table() {
             <th className="px-4 py-3 font-semibold">Value</th>
             <th className="px-4 py-3 font-semibold">Day</th>
             <th className="px-4 py-3 font-semibold">Month</th>
-            <th className="px-4 py-3 font-semibold">Delete</th>
+            <th scope="col" className="relative py-3 pl-6 pr-3">
+              <span className="sr-only">Edit</span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -28,9 +30,11 @@ export default async function Table() {
                 <td className="px-4 py-2 ">{item.value}</td>
                 <td className="px-4 py-2 ">{item.day}</td>
                 <td className="px-4 py-2 ">{item.month}</td>
-                <td className="px-7 py-2 text-gray-400 hover:text-red-500 transition-colors">
-                  {" "}
-                  <DeleteExpense id={item.id} />
+                <td className="whitespace-nowrap py-3 pl-6 pr-3">
+                  <div className="flex  gap-3">
+                    <UpdateExpense id={item.id} />
+                    <DeleteExpense id={item.id} />
+                  </div>
                 </td>
               </tr>
             ))
@@ -46,4 +50,3 @@ export default async function Table() {
     </div>
   );
 }
-

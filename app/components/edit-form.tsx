@@ -1,9 +1,10 @@
 "use client";
 
 import { updateExpense } from "@/lib/actions";
+import Link from "next/link";
 
-export default function EditForm({expense}) {
-    const updateExpenseWithId = updateExpense.bind(null, expense.id);
+export default function EditForm({ expense }) {
+  const updateExpenseWithId = updateExpense.bind(null, expense.id);
   return (
     <form
       action={updateExpenseWithId}
@@ -20,7 +21,7 @@ export default function EditForm({expense}) {
           name="description"
           required
           className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-          placeholder={expense.description}
+          defaultValue={expense.description}
         />
       </div>
 
@@ -34,7 +35,7 @@ export default function EditForm({expense}) {
           step="0.01"
           required
           className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-          placeholder={expense.value}
+          defaultValue={expense.value}
         />
       </div>
 
@@ -50,7 +51,7 @@ export default function EditForm({expense}) {
             max="31"
             required
             className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-            placeholder={expense.day}
+            defaultValue={expense.day}
           />
         </div>
 
@@ -65,7 +66,7 @@ export default function EditForm({expense}) {
             max="12"
             required
             className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-            placeholder={expense.month}
+            defaultValue={expense.month}
           />
         </div>
       </div>
@@ -74,7 +75,11 @@ export default function EditForm({expense}) {
         type="submit"
         className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition"
       >
-        Add
+        Edit
+      </button>
+
+      <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition">
+        <Link href="/"> Cancel </Link>
       </button>
     </form>
   );
