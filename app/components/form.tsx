@@ -8,7 +8,7 @@ export default function Form() {
       action={createExpense}
       className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 w-full max-w-md space-y-4 mt-5"
     >
-      <h2 className="text-xl font-semibold text-gray-800 mb-2">Add Record</h2>
+      <h2 className="text-xl font-semibold text-gray-800 mb-2">Add Expense</h2>
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
