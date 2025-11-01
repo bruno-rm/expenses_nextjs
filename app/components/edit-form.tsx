@@ -2,14 +2,18 @@
 
 import { updateExpense } from "@/lib/actions";
 import Link from "next/link";
+import { Expenses } from './definitions';
 
-export default function EditForm({ expense }) {
+
+export default function EditForm({ expense }: Expenses) {
   const updateExpenseWithId = updateExpense.bind(null, expense.id);
   return (
     <form
       action={updateExpenseWithId}
+      
       className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 w-full max-w-md space-y-4 mt-5"
-    >
+    > 
+
       <h2 className="text-xl font-semibold text-gray-800 mb-2">Edit Expense</h2>
 
       <div>
@@ -77,10 +81,11 @@ export default function EditForm({ expense }) {
       >
         Edit
       </button>
-
+      
       <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition">
         <Link href="/"> Cancel </Link>
       </button>
     </form>
+    
   );
 }
